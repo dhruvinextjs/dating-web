@@ -24,3 +24,18 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@layer base {
+  .custom-swiper-pagination .swiper-pagination-bullet {
+    background: #ef4b6c40 !important; /* inactive bullet */
+    opacity: 1 !important;
+    width: 10px;
+    height: 10px;
+  }
+
+  .custom-swiper-pagination .swiper-pagination-bullet-active {
+    background: #EF4B6C !important; /* active bullet */
+    width: 14px;
+    height: 14px;
+  }
+}
