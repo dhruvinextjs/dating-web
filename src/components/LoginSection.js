@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React from "react";
 import { FaGoogle, FaFacebookF } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
@@ -35,7 +36,9 @@ export default function LoginSection() {
 
         {/* Forgot Password */}
         <p className="text-center text-sm text-[#EF4B6C] mt-2 cursor-pointer">
+          <Link href={"/forgotpasscode"}>
           Forgot your password?
+          </Link>
         </p>
 
         {/* Create Account Button */}

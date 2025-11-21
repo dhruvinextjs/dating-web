@@ -1,176 +1,148 @@
 "use client";
 import React, { useState } from "react";
-import Image from "next/image";
+import { FiEyeOff } from "react-icons/fi";
+import { FaCheckCircle } from "react-icons/fa";
 
 export default function ForgotPasscode() {
   const [step, setStep] = useState(1);
-  const [email, setEmail] = useState("");
-  const [otp, setOtp] = useState(["", "", "", ""]);
-  const [newPass, setNewPass] = useState(["", "", "", ""]);
-  const [confirmPass, setConfirmPass] = useState(["", "", "", ""]);
 
-  // Handle OTP input
-  const handleOtpChange = (value, index) => {
-    let copy = [...otp];
-    copy[index] = value.slice(-1);
-    setOtp(copy);
-  };
+  // ------------------ STEP 1 (EMAIL) ------------------ //
+  const StepEmail = () => (
+    <>
+      <h2 className="text-2xl font-semibold text-center mb-2 text-[#000D23]">
+        Forgot Passcode?
+      </h2>
+      <p className="text-center text-[#666666] text-xs mb-6">
+        Enter your email to receive a verification code
+      </p>
 
-  // Handle passcode input
-  const handlePassChange = (setter, arr, value, index) => {
-    let copy = [...arr];
-    copy[index] = value.slice(-1);
-    setter(copy);
-  };
+      <label className="text-sm font-semibold text-[#000D23]">Email Address</label>
+      <input
+        type="email"
+        placeholder="Enter your email"
+        className="w-full mt-1 mb-4 px-4 py-3 border bg-[#FAFAFA] border-[#E6E6E6] rounded-lg outline-none
+        focus:ring-2 focus:ring-pink-300 text-sm"
+      />
 
-  return (
-    <section className="flex justify-center items-center w-full py-20 bg-[#F7F7F7]">
-      <div className="w-full max-w-[900px] mx-auto flex flex-col lg:flex-row bg-white rounded-3xl shadow-lg overflow-hidden">
+      <button
+        onClick={() => setStep(2)}
+        className="w-full mt-2 py-3 rounded-lg text-sm text-white font-semibold bg-gradient-to-r from-[#EF4B6C] to-[#FD754F]"
+      >
+        SEND CODE
+      </button>
+    </>
+  );
 
-        {/* LEFT IMAGE SECTION (same as login) */}
-        <div className="hidden lg:flex w-1/2 relative">
-          <Image
-            src="/images/login.png"
-            width={800}
-            height={800}
-            alt="side"
-            className="object-cover w-full h-full"
+  // ------------------ STEP 2 (VERIFY CODE) ------------------ //
+  const StepVerify = () => (
+    <>
+      <h2 className="text-2xl font-semibold text-center mb-2 text-[#000D23]">
+        Verify Code
+      </h2>
+      <p className="text-center text-[#666666] text-xs mb-6">
+        Enter the 6-digit verification code sent to your email
+      </p>
+
+      <div className="flex justify-between gap-2">
+        {[...Array(6)].map((_, i) => (
+          <input
+            key={i}
+            maxLength={1}
+            className="w-12 h-12 rounded-lg border border-[#E6E6E6] bg-[#FAFAFA] text-center
+            text-lg outline-none focus:ring-2 focus:ring-pink-300"
           />
-        </div>
-
-        {/* RIGHT FORM SECTION */}
-        <div className="w-full lg:w-1/2 p-10 flex flex-col justify-center">
-          {/* ---------------------- STEP 1 : ENTER EMAIL ---------------------- */}
-          {step === 1 && (
-            <>
-              <h2 className="text-3xl font-bold">Forgot Passcode?</h2>
-              <p className="text-gray-500 mt-2 text-sm">
-                Enter your registered email to continue.
-              </p>
-
-              <label className="text-sm font-medium mt-6">Email</label>
-              <input
-                type="email"
-                className="w-full border rounded-lg px-4 py-3 mt-1"
-                placeholder="Enter your email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-
-              <button
-                onClick={() => setStep(2)}
-                className="w-full mt-6 py-3 bg-gradient-to-r from-[#EF4B6C] to-[#FD754F] text-white rounded-lg font-semibold"
-              >
-                SEND CODE
-              </button>
-            </>
-          )}
-
-          {/* ---------------------- STEP 2 : OTP VERIFY ---------------------- */}
-          {step === 2 && (
-            <>
-              <h2 className="text-3xl font-bold">Verify Code</h2>
-              <p className="text-gray-500 mt-2 text-sm">
-                We sent a 4-digit verification code to your email.
-              </p>
-
-              <div className="flex gap-3 mt-6">
-                {otp.map((digit, i) => (
-                  <input
-                    key={i}
-                    maxLength={1}
-                    className="w-14 h-14 border rounded-xl text-center text-xl"
-                    value={digit}
-                    onChange={(e) => handleOtpChange(e.target.value, i)}
-                  />
-                ))}
-              </div>
-
-              <button
-                onClick={() => setStep(3)}
-                className="w-full mt-6 py-3 bg-gradient-to-r from-[#EF4B6C] to-[#FD754F] text-white rounded-lg font-semibold"
-              >
-                VERIFY
-              </button>
-            </>
-          )}
-
-          {/* ---------------------- STEP 3 : RESET PASSCODE ---------------------- */}
-          {step === 3 && (
-            <>
-              <h2 className="text-3xl font-bold">Reset Passcode</h2>
-              <p className="text-gray-500 mt-2 text-sm">
-                Enter new 4-digit passcode.
-              </p>
-
-              {/* NEW PASSCODE */}
-              <label className="text-sm font-medium mt-6">New Passcode</label>
-              <div className="flex gap-3 mt-2">
-                {newPass.map((digit, i) => (
-                  <input
-                    key={i}
-                    maxLength={1}
-                    className="w-14 h-14 border rounded-xl text-center text-xl"
-                    value={digit}
-                    onChange={(e) =>
-                      handlePassChange(setNewPass, newPass, e.target.value, i)
-                    }
-                  />
-                ))}
-              </div>
-
-              {/* CONFIRM PASSCODE */}
-              <label className="text-sm font-medium mt-6">Confirm Passcode</label>
-              <div className="flex gap-3 mt-2">
-                {confirmPass.map((digit, i) => (
-                  <input
-                    key={i}
-                    maxLength={1}
-                    className="w-14 h-14 border rounded-xl text-center text-xl"
-                    value={digit}
-                    onChange={(e) =>
-                      handlePassChange(
-                        setConfirmPass,
-                        confirmPass,
-                        e.target.value,
-                        i
-                      )
-                    }
-                  />
-                ))}
-              </div>
-
-              <button
-                onClick={() => setStep(4)}
-                className="w-full mt-6 py-3 bg-gradient-to-r from-[#EF4B6C] to-[#FD754F] text-white rounded-lg font-semibold"
-              >
-                RESET PASSCODE
-              </button>
-            </>
-          )}
-
-          {/* ---------------------- STEP 4 : SUCCESS ---------------------- */}
-          {step === 4 && (
-            <div className="flex flex-col items-center text-center">
-              <div className="w-24 h-24 bg-green-100 rounded-full flex items-center justify-center mt-6">
-                <span className="text-5xl text-green-500">✔</span>
-              </div>
-
-              <h2 className="text-3xl mt-6 font-bold">Passcode Reset!</h2>
-              <p className="text-gray-500 mt-2 text-sm">
-                Your passcode has been successfully updated.
-              </p>
-
-              <button
-                className="w-full mt-6 py-3 bg-gradient-to-r from-[#EF4B6C] to-[#FD754F] text-white rounded-lg font-semibold"
-                onClick={() => (window.location.href = "/login")}
-              >
-                GO TO LOGIN
-              </button>
-            </div>
-          )}
-        </div>
+        ))}
       </div>
-    </section>
+
+      <button
+        onClick={() => setStep(3)}
+        className="w-full mt-6 py-3 rounded-lg text-sm text-white font-semibold bg-gradient-to-r from-[#EF4B6C] to-[#FD754F]"
+      >
+        VERIFY
+      </button>
+
+      <p className="text-center text-xs text-gray-500 mt-3">
+        Didn&apos;t receive the code?{" "}
+        <span className="text-[#EF4B6C] font-semibold cursor-pointer">Resend</span>
+      </p>
+    </>
+  );
+
+  // ------------------ STEP 3 (RESET PASSCODE) ------------------ //
+  const StepReset = () => (
+    <>
+      <h2 className="text-2xl font-semibold text-center mb-2 text-[#000D23]">
+        Reset Passcode
+      </h2>
+      <p className="text-center text-[#666666] text-xs mb-6">
+        Create your new passcode
+      </p>
+
+      {/* New Password */}
+      <label className="text-sm font-semibold text-[#000D23]">New Passcode</label>
+      <div className="relative mb-4">
+        <input
+          type="password"
+          placeholder="Enter new passcode"
+          className="w-full mt-1 px-4 py-3 border bg-[#FAFAFA] border-[#E6E6E6] rounded-lg outline-none
+          focus:ring-2 focus:ring-pink-300 text-sm"
+        />
+        <FiEyeOff className="absolute right-4 top-4 text-gray-400" size={18} />
+      </div>
+
+      {/* Confirm Password */}
+      <label className="text-sm font-semibold text-[#000D23]">Confirm Passcode</label>
+      <div className="relative">
+        <input
+          type="password"
+          placeholder="Confirm passcode"
+          className="w-full mt-1 px-4 py-3 border bg-[#FAFAFA] border-[#E6E6E6] rounded-lg outline-none
+          focus:ring-2 focus:ring-pink-300 text-sm"
+        />
+        <FiEyeOff className="absolute right-4 top-4 text-gray-400" size={18} />
+      </div>
+
+      <button
+        onClick={() => setStep(4)}
+        className="w-full mt-6 py-3 rounded-lg text-sm text-white font-semibold bg-gradient-to-r from-[#EF4B6C] to-[#FD754F]"
+      >
+        RESET PASSCODE
+      </button>
+    </>
+  );
+
+  // ------------------ STEP 4 (SUCCESS) ------------------ //
+  const StepSuccess = () => (
+    <div className="flex flex-col items-center text-center py-6">
+      <FaCheckCircle className="text-green-500 text-6xl mb-4" />
+
+      <h2 className="text-2xl font-semibold text-[#000D23] mb-2">
+        Passcode Reset!
+      </h2>
+      <p className="text-[#666666] text-xs mb-6">
+        Your passcode has been successfully updated.
+      </p>
+
+      <button
+        onClick={() => (window.location.href = "/login")}
+        className="w-full py-3 rounded-lg text-sm text-white font-semibold bg-gradient-to-r from-[#EF4B6C] to-[#FD754F]"
+      >
+        BACK TO LOGIN
+      </button>
+    </div>
+  );
+
+  // ------------------ MAIN RETURN ------------------ //
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-[#FEF1F5] px-4">
+      <div className="w-full max-w-sm bg-[#FFFFFF] rounded-2xl shadow-md p-8 transition-all duration-300">
+
+        {step === 1 && <StepEmail />}
+        {step === 2 && <StepVerify />}
+        {step === 3 && <StepReset />}
+        {step === 4 && <StepSuccess />}
+
+      </div>
+    </div>
   );
 }
