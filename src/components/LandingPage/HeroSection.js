@@ -1,11 +1,12 @@
     import React from 'react';
     import Image from 'next/image';
+import Link from 'next/link';
  
     function HeroSection() {
     return (
         <div
         className="relative min-h-screen bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/static/images/bg-image.png')" }}
+        style={{ backgroundImage: "url('/images/bg-image.png')" }}
         >
  
         {/* Navbar */}
@@ -14,7 +15,7 @@
             {/* Logo */}
             <div className="flex items-center">
             <Image
-                src="/static/images/Logo.png"
+                src="/images/Logo.png"
                 alt="Dating Logo"
                 width={200}
                 height={60}
@@ -26,7 +27,7 @@
             {/* Auth Buttons */}
             <div className="flex space-x-2 sm:space-x-4">
             <button className="px-3 sm:px-4 py-2 bg-white border border-[#DFDFDF] rounded-xl text-[#000000] font-semibold text-xs sm:text-sm">
-                LOG IN
+               <Link href={"/login"}>LOG IN</Link>
             </button>
             <button className="px-3 sm:px-4 py-2 bg-gradient-to-r from-[#EF4B6C] to-[#FD754F] text-white rounded-xl text-xs sm:text-sm font-semibold">
                 CREATE ACCOUNT
@@ -60,7 +61,7 @@
             {/* Right Section */}
             <div className="md:w-1/2 flex justify-center md:justify-end">
             <Image
-                src="/static/images/Frame 1.png"
+                src="/images/Frame 1.png"
                 alt="Hero Image"
                 width={700}
                 height={600}
