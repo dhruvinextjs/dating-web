@@ -22,8 +22,9 @@ export default function Home() {
   ];
 
   return (
-    <div className="px-4 md:px-24 py-10 bg-[#FAFAFA]">
-      
+    // <div className="px-4 md:px-24 py-10 bg-[#FAFAFA]">
+<div className="py-10 bg-[#FAFAFA] mt-20">
+  <div className="px-4 md:px-5 max-w-7xl mx-auto">      
       <h2 className="text-xl md:text-2xl font-semibold mb-1 text-[#000D23]">Discover Matches</h2>
       <p className="text-[#666666] mb-6">Find people who share your interests and values</p>
 
@@ -31,7 +32,7 @@ export default function Home() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
 
         {profiles.map((p, i) => (
-          // <Link href={`/detail/${p.id}`} key={p.id}>
+          <Link href={`/detail/${p.id}`} key={p.id}>
           <div
             key={i}
             className="bg-[#FFFFFF] rounded-xl shadow-sm border border-[#FFD2DB] overflow-hidden"
@@ -63,8 +64,9 @@ export default function Home() {
               </p>
             </div>
           </div>
-          // </Link>
+           </Link>
         ))}
+      </div>
       </div>
     </div>
   );

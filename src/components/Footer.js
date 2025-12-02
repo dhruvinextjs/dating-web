@@ -14,7 +14,7 @@ export default function Footer() {
         <div className="flex flex-col">
           <div className="relative w-44 h-20"> 
             <Image
-              src="/images/logo.png"
+              src={"/images/Logo.png"}
               alt="logo"
               width={250}
               height={250}

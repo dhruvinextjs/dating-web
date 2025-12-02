@@ -1,18 +1,16 @@
-// /** @type {import('next').NextConfig} */
-// const nextConfig = {
-//   /* config options here */
-// };
-
-// export default nextConfig;
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    turbo: false,       // Turbopack OFF
-  },
-  productionBrowserSourceMaps: false,
-  reactStrictMode: false,
-  swcMinify: false,
+  /* config options here */
 };
 
 export default nextConfig;
+
+
+// /** @type {import('next').NextConfig} */
+// const nextConfig = {
+//   experimental: {
+//     webpackMemoryOptimizations: false,
+//     optimizePackageImports: false,
+//   },
+// };
+// export default nextConfig;

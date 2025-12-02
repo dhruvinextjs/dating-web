@@ -35,14 +35,33 @@ export default function Testimonials() {
   return (
     <section className="w-full py-24 flex flex-col items-center relative px-6">
       {/* Background Image */}
+      {/* Dark Background - Bottom Layer */}
+      <div className="absolute inset-0 -z-20">
+        <Image
+          src="/images/dark-bg.png"
+          alt="dark background"
+          fill
+          className="object-cover w-full h-full"
+        />
+      </div>
+
+      {/* Light Background - Top Layer */}
       <div className="absolute inset-0 -z-10">
+        <Image
+          src="/images/step-bg.jpg"
+          alt="light overlay"
+          fill
+          className="object-cover w-full h-full opacity-80"
+        />
+      </div>
+      {/* <div className="absolute inset-0 -z-10">
         <Image
           src="/images/step-bg.jpg"
           alt="testimonial background"
           fill
           className="object-cover w-full h-full"
         />
-      </div>
+      </div> */}
 
       {/* Heading */}
       <h2 className="text-3xl md:text-4xl font-bold text-[#000000] text-center">

@@ -1,11 +1,13 @@
 "use client";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import { FaGoogle, FaFacebookF } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
-import { FiEyeOff } from "react-icons/fi";
+import { FiEye, FiEyeOff } from "react-icons/fi";
 
 export default function LoginSection() {
+  const [showPassword, setShowPassword] = useState(false);
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#FEF1F5] px-4">
       <div className="w-full max-w-sm bg-[#FFFFFF] rounded-2xl shadow-md p-8">
@@ -27,17 +29,23 @@ export default function LoginSection() {
         <label className="text-sm font-semibold text-[#000D23]">Password</label>
         <div className="relative">
           <input
-            type="password"
+            type={showPassword ? "text" : "password"}
             placeholder="Enter your password"
             className="w-full mt-1 px-4 py-3 border bg-[#FAFAFA] border-[#E6E6E6] rounded-lg outline-none focus:ring-2 focus:ring-pink-300 text-sm"
           />
-          <FiEyeOff className="absolute right-4 top-4 text-gray-400" size={18} />
+          <button
+            type="button"
+            className="absolute right-4 top-4 text-gray-400"
+            onClick={() => setShowPassword(!showPassword)}
+          >
+            {showPassword ? <FiEye /> : <FiEyeOff />}
+          </button>
         </div>
 
         {/* Forgot Password */}
         <p className="text-center text-sm text-[#EF4B6C] mt-2 cursor-pointer">
           <Link href={"/forgotpasscode"}>
-          Forgot your password?
+            Forgot your password?
           </Link>
         </p>
 
