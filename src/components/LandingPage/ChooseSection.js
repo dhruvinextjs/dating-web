@@ -90,10 +90,10 @@ export default function ChooseSection() {
   ];
 
   return (
-    <section className="w-full py-24 flex flex-col items-center px-6">
+    <section className="w-full bg-[#ffffff]  py-24 flex flex-col items-center px-6">
       {/* Heading */}
       <h2 className="text-3xl md:text-4xl font-bold text-[#000000] text-center">
-        Why Choose <span className="text-[#EF4B6C]">LoveConnect</span>
+        Why Choose <span className="text-[#7B00F7]">LoveConnect</span>
       </h2>
 
       {/* Two-line Paragraph */}
@@ -107,10 +107,10 @@ export default function ChooseSection() {
         {data.map((item, index) => (
           <div
             key={index}
-            className="rounded-2xl bg-[#FFF2F4] border border-[#FAD2D8] p-14 flex flex-col items-center text-center"
+            className="rounded-2xl bg-[#FAF2FF] border border-[#EBD2FA] p-14 flex flex-col items-center text-center"
           >
             {/* Gradient Square with Image */}
-            <div className="w-20 h-20 rounded-3xl bg-gradient-to-br from-[#EF4B6C] to-[#FD754F] flex items-center justify-center mb-5">
+            <div className="w-20 h-20 rounded-3xl bg-gradient-to-br from-[#7B00F7] to-[#9162D8] flex items-center justify-center mb-5">
               <div className="relative w-10 h-10">
                 <Image
                   src={item.img}
@@ -122,7 +122,7 @@ export default function ChooseSection() {
             </div>
 
             {/* Title */}
-            <h3 className="text-xl font-semibold text-[#EF4B6C]">
+            <h3 className="text-xl font-semibold text-[#7B00F7]">
               {item.title}
             </h3>
 

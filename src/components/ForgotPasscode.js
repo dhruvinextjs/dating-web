@@ -26,18 +26,17 @@ const [showConfirmPass, setShowConfirmPass] = useState(false);
       <input
         type="email"
         placeholder="Enter your email"
-        className="w-full mt-1 mb-4 px-4 py-3 border bg-[#FAFAFA] border-[#E6E6E6] rounded-lg outline-none
-        focus:ring-2 focus:ring-pink-300 text-sm"
+        className="w-full mt-1 mb-4 px-4 py-3 text-[#000000] border bg-[#FAFAFA] border-[#E6E6E6] rounded-lg outline-none text-sm"
       />
 
       <button
         onClick={() => setStep(2)}
-        className="w-full mt-2 py-4 rounded-lg uppercase text-sm text-white font-semibold bg-gradient-to-r from-[#EF4B6C] to-[#FD754F]"
+        className="w-full mt-2 py-4 rounded-lg cursor-pointer uppercase text-sm text-[#FFFFFF] font-semibold bg-[#7B00F7]"
       >
         Send Reset Link
       </button>
 
-      <p className="text-center mt-6 text-md text-[#666666]"><Link href={"/login"}>Back to Login</Link></p>
+      <p className="text-center mt-6 text-md text-[#666666] cursor-pointer"><Link href={"/login"}>Back to Login</Link></p>
     </>
   );
 
@@ -84,23 +83,23 @@ const StepVerify = () => {
             value={val}
             onChange={(e) => handleChange(e.target.value, i)}
             onKeyDown={(e) => handleKeyDown(e, i)}
-            className="w-13 h-13 rounded-lg border border-[#E6E6E6] bg-[#FAFAFA]
-            text-center text-lg outline-none focus:ring-2 focus:ring-pink-300"
+            className="w-13 h-13 rounded-lg border text-[#000000] border-[#E6E6E6] bg-[#FAFAFA]
+            text-center text-lg outline-none"
           />
         ))}
       </div>
       
-      <p className="text-center mt-6">00:57</p>
+      <p className="text-center mt-6 text-[#000000]">00:57</p>
 
       <button
         onClick={() => setStep(3)}
-        className="w-full mt-4 py-4 uppercase rounded-lg text-sm text-white font-semibold bg-gradient-to-r from-[#EF4B6C] to-[#FD754F]"
+        className="w-full mt-4 py-4 uppercase cursor-pointer rounded-lg text-sm text-[#FFFFFF] font-semibold bg-[#7B00F7]"
       >
         Submit
       </button>
 
-      <p className="text-center text-md text-[#666666] mt-4">
-        Back to Login
+      <p className="text-center text-md text-[#666666] mt-4 cursor-pointer">
+        <Link href={"/login"}>Back to Login</Link>
       </p>
     </>
   );
@@ -128,8 +127,7 @@ const StepReset = () => {
         <input
           type={showPass ? "text" : "password"}
           placeholder="Enter your password"
-          className="w-full mt-1 px-4 py-3 border bg-[#FAFAFA] border-[#E6E6E6] rounded-lg outline-none
-          focus:ring-2 focus:ring-pink-300 text-sm"
+          className="w-full mt-1 px-4 py-3 text-[#000000] border bg-[#FAFAFA] border-[#E6E6E6] rounded-lg outline-none text-sm"
         />
 
         <span
@@ -148,8 +146,7 @@ const StepReset = () => {
         <input
           type={showConfirmPass ? "text" : "password"}
           placeholder="Confirm your password"
-          className="w-full mt-1 px-4 py-3 border bg-[#FAFAFA] border-[#E6E6E6] rounded-lg outline-none
-          focus:ring-2 focus:ring-pink-300 text-sm"
+          className="w-full mt-1 px-4 py-3 text-[#000000] border bg-[#FAFAFA] border-[#E6E6E6] rounded-lg outline-none text-sm"
         />
 
         <span
@@ -162,7 +159,7 @@ const StepReset = () => {
 
       <button
         onClick={() => setStep(4)}
-        className="w-full mt-6 py-4 rounded-lg text-sm text-white font-semibold bg-gradient-to-r from-[#EF4B6C] to-[#FD754F]"
+        className="w-full cursor-pointer mt-6 py-4 rounded-lg text-sm text-[#FFFFFF] font-semibold bg-[#7B00F7]"
       >
         RESET
       </button>
@@ -185,7 +182,7 @@ const StepReset = () => {
 
       <button
         onClick={() => (window.location.href = "/login")}
-        className="w-50 uppercase py-4 rounded-lg text-sm text-white font-semibold bg-gradient-to-r from-[#EF4B6C] to-[#FD754F]"
+        className="w-50 uppercase cursor-pointer py-4 rounded-lg text-sm text-[#FFFFFF] font-semibold bg-[#7B00F7]"
       >
         Back to Sign In
       </button>
@@ -194,7 +191,7 @@ const StepReset = () => {
 
   // ------------------ MAIN RETURN ------------------ //
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#FEF1F5] px-4">
+    <div className="min-h-screen flex items-center justify-center bg-[#F7F2FF] px-4">
       <div className="w-full max-w-md bg-[#FFFFFF] rounded-2xl shadow-md p-8 transition-all duration-300">
 
         {step === 1 && <StepEmail />}

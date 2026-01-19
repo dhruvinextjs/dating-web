@@ -10,7 +10,7 @@ import { FaXTwitter } from "react-icons/fa6";
 
 function TopHeader() {
   return (
-    <div className="bg-[#FB3957] text-white py-3">
+    <div className="bg-[#000000] text-[#FFFFFF] py-3">
       <div
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 
                       flex flex-col md:flex-row md:justify-between md:items-center 

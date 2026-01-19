@@ -9,7 +9,7 @@ export default function LoginSection() {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#FEF1F5] px-4">
+    <div className="min-h-screen flex items-center justify-center bg-[#F7F2FF] px-4">
       <div className="w-full max-w-sm bg-[#FFFFFF] rounded-2xl shadow-md p-8">
         {/* Heading */}
         <h2 className="text-2xl font-semibold text-center mb-2 text-[#000D23]">Welcome Back!</h2>
@@ -22,7 +22,7 @@ export default function LoginSection() {
         <input
           type="text"
           placeholder="Enter your email"
-          className="w-full mt-1 mb-4 px-4 py-3 border bg-[#FAFAFA] border-[#E6E6E6] rounded-lg outline-none focus:ring-2 focus:ring-pink-300 text-sm"
+          className="w-full mt-1 mb-4 px-4 py-3 text-[#000000] border bg-[#FAFAFA] border-[#E6E6E6] rounded-lg outline-none text-sm"
         />
 
         {/* Password */}
@@ -31,7 +31,7 @@ export default function LoginSection() {
           <input
             type={showPassword ? "text" : "password"}
             placeholder="Enter your password"
-            className="w-full mt-1 px-4 py-3 border bg-[#FAFAFA] border-[#E6E6E6] rounded-lg outline-none focus:ring-2 focus:ring-pink-300 text-sm"
+            className="w-full mt-1 px-4 py-3 text-[#000000] border bg-[#FAFAFA] border-[#E6E6E6] rounded-lg outline-none text-sm"
           />
           <button
             type="button"
@@ -50,31 +50,31 @@ export default function LoginSection() {
         </p>
 
         {/* Create Account Button */}
-        <button className="w-full mt-5 py-3 rounded-lg text-sm text-white font-semibold bg-gradient-to-r from-[#EF4B6C] to-[#FD754F]">
-          CREATE ACCOUNT
+        <button className="w-full cursor-pointer mt-5 py-3 rounded-lg text-sm text-white font-semibold bg-[#7B00F7]">
+          <Link href={"/home"}>CREATE ACCOUNT</Link>
         </button>
 
         {/* Divider */}
         <div className="flex items-center gap-3 my-6">
-          <div className="flex-1 h-px bg-gray-300"></div>
-          <span className="text-xs text-gray-500">OR CONTINUE WITH</span>
-          <div className="flex-1 h-px bg-gray-300"></div>
+          <div className="flex-1 h-px bg-[#D8DFE5]"></div>
+          <span className="text-xs text-[#666666]">OR CONTINUE WITH</span>
+          <div className="flex-1 h-px bg-[#D8DFE5]"></div>
         </div>
 
         {/* Social Buttons */}
         <div className="flex gap-4">
-          <button className="w-1/2 flex items-center justify-center gap-2 py-3 rounded-lg bg-[#F5F5F5]">
+          <button className="w-1/2 cursor-pointer flex items-center justify-center gap-2 py-3 rounded-lg bg-[#F5F5F5]">
             <FcGoogle />
           </button>
-          <button className="w-1/2 flex items-center justify-center gap-2 py-3 rounded-lg bg-[#F5F5F5]">
-            <FaFacebookF className="text-lg" />
+          <button className="w-1/2 cursor-pointer flex items-center justify-center gap-2 py-3 rounded-lg bg-[#F5F5F5]">
+            <FaFacebookF className="text-lg text-[#395C94]" />
           </button>
         </div>
 
         {/* Create Account Link */}
         <p className="text-center text-sm text-[#666666] mt-6">
           Don&apos;t have an account?{" "}
-          <span className="text-[#EF4B6C] cursor-pointer font-semibold underline">Create Account</span>
+          <Link href={"/signup"}><span className="text-[#EF4B6C] cursor-pointer font-semibold underline">Create Account</span></Link>
         </p>
       </div>
     </div>

@@ -14,14 +14,14 @@ export default function PeopleSection() {
   ];
 
   return (
-    <section className="w-full py-24 flex flex-col items-center px-6">
+    <section className="w-full bg-[#ffffff] py-24 flex flex-col items-center px-6">
       {/* Heading */}
       <h2 className="text-3xl md:text-4xl font-bold text-[#000000] text-center">
-        Only <span className="text-[#EF4B6C]">True People</span>
+        Only <span className="text-[#7B00F7]">True People</span>
       </h2>
 
       {/* Paragraph */}
-      <p className="text-gray-600 text-sm md:text-base text-center max-w-2xl mt-4 leading-relaxed">
+      <p className="text-[#000000] text-sm md:text-base text-center max-w-2xl mt-4 leading-relaxed">
         Learn from them and try to make it to this board. This will for sure
         boost you visibility and increase your chances to find you loved one.
       </p>
@@ -44,7 +44,7 @@ export default function PeopleSection() {
       </div>
 
       {/* Button */}
-      <button className="mt-12 px-8 py-4 bg-gradient-to-r from-[#EF4B6C] to-[#FD754F] text-white rounded-lg uppercase text-sm font-semibold shadow-md">
+      <button className="mt-12 px-8 py-4 bg-[#7B00F7] text-[#FFFFFF] rounded-lg uppercase text-sm font-semibold shadow-md">
         View More Popular
       </button>
     </section>

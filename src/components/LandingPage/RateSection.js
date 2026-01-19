@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function RateSection() {
   return (
-    <section className="w-full px-6 py-20 flex justify-center">
+    <section className="w-full bg-[#ffffff]  px-6 py-20 flex justify-center">
       <div className="w-full max-w-6xl rounded-3xl overflow-hidden relative p-10 md:p-16">
 
         {/* Background Image */}
@@ -21,7 +21,7 @@ export default function RateSection() {
           <div className="absolute inset-0 bg-[rgba(0,0,0,0.10)]"></div>
 
           {/* RIGHT → LEFT MAIN COLOR GRADIENT WITH OPACITY 0.86 */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[rgba(239,75,108,0.86)] to-[rgba(253,117,79,0.86)]"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[rgba(123,0,247,0.66)] to-[rgba(123,0,247,0.66)]"></div>
         </div>
 
         {/* Content */}

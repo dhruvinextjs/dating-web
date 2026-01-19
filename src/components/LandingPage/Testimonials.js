@@ -65,7 +65,7 @@ export default function Testimonials() {
 
       {/* Heading */}
       <h2 className="text-3xl md:text-4xl font-bold text-[#000000] text-center">
-        What Our <span className="text-[#EF4B6C]">Clients Say</span>
+        What Our <span className="text-[#7B00F7]">Clients Say</span>
       </h2>
 
       {/* Paragraph */}
@@ -91,7 +91,7 @@ export default function Testimonials() {
           {reviews.map((item, index) => (
             <SwiperSlide key={index}>
               <div className="bg-[#FFFFFF] rounded-3xl p-8 h-full flex flex-col justify-between">
-                <p className="text-[#555555] text-sm leading-relaxed mb-6">
+                <p className="text-[#000000] text-sm leading-relaxed mb-6">
                   {item.text}
                 </p>
 

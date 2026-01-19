@@ -11,7 +11,7 @@ export default function About() {
           {/* Top decorative circle (Auto Resize) */}
           <img
             src="/images/bgimage.png"
-            className="absolute -top -10 sm:-top-16 md:-top-20 -left-6 md:-left-20 sm:-left-13 w-40 sm:w-56 md:w-72 "
+            className="absolute -top-10 sm:-top-16 md:-top-20 -left-6 md:-left-20 sm:-left-13 w-40 sm:w-56 md:w-72 "
             alt="shape"
           />
 
@@ -29,14 +29,15 @@ export default function About() {
 
         {/* ⭐ RIGHT CONTENT BLOCK */}
         <img
-          src="/images/bgimage2.png"
+          src="/images/bgimage.png"
           className="
-            hidden sm:block absolute
-            top-5 sm:top-10 md:top-3
-            right-0 sm:right-4 md:right-20 lg:right-18
-            w-32 sm:w-40 md:w-52 lg:w-50
-            opacity-80 pointer-events-none z-0
-          "
+    hidden sm:block absolute
+    bottom-0 sm:-bottom-8 md:-bottom-7
+    right-0 sm:-right-6 md:right-14
+    w-32 sm:w-40 md:w-52 lg:w-56
+    opacity-80 pointer-events-none z-0
+  rotate-[-180deg]
+  "
           alt="shape"
         />
 
@@ -49,27 +50,29 @@ export default function About() {
     lg:-ml-30 xl:-ml-28
   "
         >
-          <p className="text-[#EF4B6C] text-sm sm:text-base font-semibold mb-2">
+          <p className="text-[#7B00F7] text-sm sm:text-base font-semibold mb-2">
             About Us
           </p>
 
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black leading-snug">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#000000] leading-snug">
             Dating Better{" "}
-            <span className="text-[#EF4B6C]">Than Ever Before</span>
+            <span className="text-[#7B00F7]">Than Ever Before</span>
           </h2>
 
-          <p className="text-gray-600 mt-4 text-sm sm:text-[15px] leading-relaxed">
+          <p className="text-[#000000] mt-4 text-sm sm:text-[15px] leading-relaxed">
             HeartConnect was founded in 2024 with a simple mission: to help
-            people find genuine connections in an increasingly digital world.
+            people find genuine connections in an increasingly digital world. We
+            believe that everyone deserves to find their perfect match, and
+            we&apos;re committed to making that happen.
           </p>
 
-          <p className="text-gray-600 mt-3 text-sm sm:text-[15px] leading-relaxed">
+          <p className="text-[#000000] mt-3 text-sm sm:text-[15px] leading-relaxed">
             Our platform combines advanced matching algorithms with a human
             touch, ensuring that every connection you make has the potential to
             be meaningful.
           </p>
 
-          <button className="mt-6 px-6 sm:px-8 py-3 bg-gradient-to-r from-[#EF4B6C] to-[#FD754F] text-white rounded-lg font-semibold text-sm shadow-md">
+          <button className="mt-6 px-6 sm:px-8 py-3 bg-[#7B00F7] text-[#FFFFFF] rounded-lg font-semibold text-sm shadow-md">
             VIEW MORE
           </button>
         </div>
