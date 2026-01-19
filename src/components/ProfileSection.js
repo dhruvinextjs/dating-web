@@ -112,7 +112,7 @@ export default function Profile() {
             </div>
           </div>
 
-          <div className="mt-5 text-sm border border-[#EBE0E4] rounded-xl shadow-sm">
+          {/* <div className="mt-5 text-sm border border-[#EBE0E4] rounded-xl shadow-sm">
             <button
               onClick={() => router.push("/blocked-user")}
               className="w-full m-2 flex items-center text-sm cursor-pointer font-medium"
@@ -121,7 +121,24 @@ export default function Profile() {
               <span className="ml-3 text-[#000000]">Blocked users</span>
               <MdKeyboardArrowRight className="ml-[40%] text-[#000000] text-2xl" />
             </button>
-          </div>
+          </div> */}
+<div className="mt-5 text-sm border border-[#EBE0E4] rounded-xl shadow-sm">
+  <button
+    onClick={() => router.push("/blocked-user")}
+    className="w-full m-2 flex items-center text-sm cursor-pointer font-medium"
+  >
+    <MdBlockFlipped className="ml-2 text-[#EF4B6C] text-lg" />
+
+    <span className="ml-3 text-[#000000]">
+      Blocked users
+    </span>
+
+    {/* RIGHT ARROW */}
+    <MdKeyboardArrowRight className="ml-auto mr-3 text-[#000000] text-2xl" />
+  </button>
+</div>
+
+
         </div>
 
         {/* RIGHT CONTENT */}
