@@ -44,7 +44,7 @@ export default function PeopleSection() {
       </div>
 
       {/* Button */}
-      <button className="mt-12 px-8 py-4 bg-[#7B00F7] text-[#FFFFFF] rounded-lg uppercase text-sm font-semibold shadow-md">
+      <button className="mt-12 px-8 py-4 bg-[#7B00F7] text-[#FFFFFF] cursor-pointer rounded-lg uppercase text-sm font-semibold shadow-md">
         View More Popular
       </button>
     </section>

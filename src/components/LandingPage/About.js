@@ -72,7 +72,7 @@ export default function About() {
             be meaningful.
           </p>
 
-          <button className="mt-6 px-6 sm:px-8 py-3 bg-[#7B00F7] text-[#FFFFFF] rounded-lg font-semibold text-sm shadow-md">
+          <button className="mt-6 px-6 sm:px-8 py-3 cursor-pointer bg-[#7B00F7] text-[#FFFFFF] rounded-lg font-semibold text-sm shadow-md">
             VIEW MORE
           </button>
         </div>

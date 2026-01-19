@@ -33,7 +33,7 @@ export default function Advertise() {
           </h2>
 
           {/* Button */}
-          <button className="mt-8 px-5 font-semibold py-3 text-[#FFFFFF] border border-[#FFFFFF] rounded-lg uppercase text-base md:text-md hover:bg-white hover:text-[#7B00F7] transition-all duration-300">
+          <button className="mt-8 px-5 font-semibold py-3 cursor-pointer text-[#FFFFFF] border border-[#FFFFFF] rounded-lg uppercase text-base md:text-md hover:bg-white hover:text-[#7B00F7] transition-all duration-300">
             Start Your Journey
           </button>
         </div>
